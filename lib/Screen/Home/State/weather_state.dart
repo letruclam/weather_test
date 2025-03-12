@@ -17,9 +17,17 @@ class InformationWeather extends WeatherState {
 class LocationLoaded extends WeatherState {
   String? tempCurrent;
   String? nameCurrent;
+  final Map<String, double> avgTempsPerDay;
 
-  // LocationLoaded(this.latitude, this.longitude);
-  // List<Object?> get props => [latitude, longitude];
+  LocationLoaded(this.tempCurrent, this.nameCurrent,this.avgTempsPerDay);
+  List<Object?> get props => [tempCurrent, nameCurrent,avgTempsPerDay];
+}
+
+
+class ForecastState extends WeatherState {
+  final Map<String, double> avgTempsPerDay;
+  ForecastState(this.avgTempsPerDay);
+  List<Object?> get props => [avgTempsPerDay];
 }
 
 

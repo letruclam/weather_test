@@ -18,4 +18,10 @@ class WeatherRepository {
     return responseModel;
   }
 
+  Future<ResponseModel> repositoryGetForecastWeather(dynamic param) async {
+    var responseModel = ResponseModel();
+    responseModel = await service.getForecastWeather(param);
+    return responseModel;
+  }
+
 }

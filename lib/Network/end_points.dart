@@ -9,6 +9,8 @@ import 'base_url.dart' as base_url;
 
 class _MyURL {
   final urlGetCurrentWeather = "${base_url.domainURL}weather";
+  final urlGetForecastWeather = "${base_url.domainURL}forecast";
+
 }
 
 final myUrl = _MyURL();

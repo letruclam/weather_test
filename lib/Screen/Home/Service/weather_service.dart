@@ -15,8 +15,13 @@ class WeatherService extends ServiceBloc {
 
   Future<ResponseModel> getCurrentWeather(dynamic param) async {
     var response = ResponseModel();
-    await connectApi(param,"${myUrl.urlGetCurrentWeather}?lat=${param.latitude}&lon=${param.longitude}&appid=f125793879c6ea639d0eca8fc9583822",MethodApi.get, (res) => response = res);
+    await connectApi(param,"${myUrl.urlGetCurrentWeather}?lat=${param.latitude}&lon=${param.longitude}&appid=f125793879c6ea639d0eca8fc9583822&units=metric",MethodApi.get, (res) => response = res);
     return response;
   }
 
+  Future<ResponseModel> getForecastWeather(dynamic param) async {
+    var response = ResponseModel();
+    await connectApi(param,"${myUrl.urlGetForecastWeather}?lat=${param.latitude}&lon=${param.longitude}&appid=f125793879c6ea639d0eca8fc9583822&units=metric",MethodApi.get, (res) => response = res);
+    return response;
+  }
 }
